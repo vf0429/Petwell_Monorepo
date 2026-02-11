@@ -129,6 +129,25 @@ services:
 ```
 
 ---
+## 🤝 提交规范 (Git Flow)
+
+由于是 Monorepo，提交代码时请遵循 **原子提交 (Atomic Commits)** 原则。
+
+* **❌ 错误做法**: 修改了前端和后端，用一个 commit `update code` 提交。
+* **✅ 正确做法**:
+1. `git add backend/` -> `git commit -m "feat(backend): add user validation logic"`
+2. `git add frontend/` -> `git commit -m "style(frontend): update chat bubble color"`
+
+
+
+**Commit Message 前缀建议**:
+
+* `feat(scope)`: 新功能 (scope 可以是 frontend, backend, rag)
+* `fix(scope)`: 修 Bug
+* `docs`: 仅文档修改
+* `chore`: 配置变动 (如 docker-compose, .gitignore)
+
+---
 
 ## 🚨 常见排错 (Troubleshooting)
 
@@ -145,3 +164,7 @@ services:
 * **Q: 端口冲突 (Port already in use)?**
 * **检查**: 8000 端口非常热门。如果你电脑上跑了其他 Python 服务或 Django，可能会占用 8000。
 * **解决**: `lsof -i :8000` 查一下谁在用。
+
+
+
+
